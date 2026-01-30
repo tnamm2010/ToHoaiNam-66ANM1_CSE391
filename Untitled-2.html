@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task List</title>
+</head>
+
+<body>
+  <!-- App Container -->
+  <main>
+    <!-- Header -->
+    <header>
+      <h1>Task List</h1>
+      <button type="button" aria-label="Add Task">+ Add Task</button>
+    </header>
+
+    <!-- Task List -->
+    <section aria-label="Danh sách công việc">
+      <!-- Bạn có thể thay <table> bằng <ul> nếu thích; table dễ mô phỏng layout trong ảnh -->
+      <table border="1" cellpadding="8" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Status</th>
+            <th scope="col">Complete</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Item 1 -->
+          <tr>
+            <td>
+              <strong>Go to gym</strong>
+            </td>
+            <td>High</td>
+            <td>To Do</td>
+            <td>
+              <input type="checkbox" id="done-1" name="done-1" />
+              <label for="done-1">Done</label>
+            </td>
+            <td>
+              <button type="button" aria-label="Edit task 1">Edit</button>
+              <button type="button" aria-label="Delete task 1">Delete</button>
+            </td>
+          </tr>
+
+          <!-- Item 2 -->
+          <tr>
+            <td>
+              <strong>Read a book</strong>
+            </td>
+            <td>Low</td>
+            <td>Done</td>
+            <td>
+              <input type="checkbox" id="done-2" name="done-2" checked />
+              <label for="done-2">Done</label>
+            </td>
+            <td>
+              <button type="button" aria-label="Edit task 2">Edit</button>
+              <button type="button" aria-label="Delete task 2">Delete</button>
+            </td>
+          </tr>
+
+          <!-- Item 3 -->
+          <tr>
+            <td>
+              <strong>Go to market</strong>
+            </td>
+            <td>Medium</td>
+            <td>In Progress</td>
+            <td>
+              <input type="checkbox" id="done-3" name="done-3" />
+              <label for="done-3">Done</label>
+            </td>
+            <td>
+              <button type="button" aria-label="Edit task 3">Edit</button>
+              <button type="button" aria-label="Delete task 3">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr />
+
+    <!-- Add Task Form (khung sườn, chưa có JS để mở/đóng modal) -->
+    <section aria-label="Thêm công việc">
+      <header>
+        <h2>Add Task</h2>
+        <button type="button" aria-label="Close add task form">X</button>
+      </header>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Task info</legend>
+
+          <p>
+            <label for="task-title">Task</label><br />
+            <input
+              type="text"
+              id="task-title"
+              name="task_title"
+              placeholder="Type your task here..."
+              required
+            />
+          </p>
+
+          <fieldset>
+            <legend>Priority</legend>
+
+            <input type="radio" id="p-high" name="priority" value="High" required />
+            <label for="p-high">High</label>
+
+            <input type="radio" id="p-medium" name="priority" value="Medium" />
+            <label for="p-medium">Medium</label>
+
+            <input type="radio" id="p-low" name="priority" value="Low" />
+            <label for="p-low">Low</label>
+          </fieldset>
+
+          <p>
+            <label for="status">Status</label><br />
+            <select id="status" name="status">
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+          </p>
+
+          <p>
+            <button type="submit">Add</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
